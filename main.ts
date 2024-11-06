@@ -1,8 +1,7 @@
-export function add(a: number, b: number): number {
-  return a + b;
-}
+import HTML from "./HTML.ts";
 
-// Learn more at https://docs.deno.com/runtime/manual/examples/module_metadata#concepts
-if (import.meta.main) {
-  console.log("Add 2 + 3 =", add(2, 3));
-}
+export const run = () => {
+  const element = HTML.element("h1").class("text-red").child("Hallo, Dunia!");
+
+  document.getElementById("app")?.appendChild(element.getDom());
+};
